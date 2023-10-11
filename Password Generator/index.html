@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <title>Password Generator - TheBlaiseCode</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./tailwind.css"></script>
+  </head>
+  <body
+    class="h-[100vh] bg-[#2b2b2c] flex items-center justify-center text-[#9ca3af] scroll-smooth">
+    <div
+      class="flat container max-w-[23rem] max-h-max bg-[#2b2b2c] rounded-[30px] py-8 px-5 sm:max-w-lg sm:p-12">
+      <h1 class="text-2xl font-bold text-center uppercase">
+        Generate a Passsword
+      </h1>
+
+      <div class="mt-8 font-bold">
+        <div class="flex justify-between items-center text-md uppercase">
+          <p>Length</p>
+          <input
+            type="number"
+            id="length"
+            min="1"
+            max="128"
+            class="bg-black pl-3 w-20 h-10 pressed rounded-md bg-gradient-to-r from-[#303031] to-[#39393a]"
+            placeholder="8" />
+        </div>
+
+        <input
+          class="w-[100%] cursor-pointer mt-4 bg-[#242424] appearance-none rounded-xl h-2"
+          type="range"
+          name="slide"
+          id="slide"
+          min="1"
+          max="128"
+          value="8" />
+      </div>
+
+      <div class="mt-8 flex font-medium space-x-5 sm:space-x-16">
+        <div class="flex flex-col space-y-2">
+          <div>
+            <input
+              type="checkbox"
+              class="accent-[#2b2b2c] border-[#2b2b2c]"
+              name="lower"
+              id="lower"
+              checked />
+            <label class="pl-0.5 sm:pl-2" for="lower">Lowercase (a-z)</label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              class="accent-[#2b2b2c] border-[#2b2b2c]"
+              name="upper"
+              id="upper"
+              checked />
+            <label class="pl-0.5 sm:pl-2" for="upper">Uppercase (A-Z)</label>
+          </div>
+        </div>
+
+        <div class="flex flex-col space-y-2">
+          <div id="dd">
+            <input
+              type="checkbox"
+              class="accent-[#2b2b2c] border-[#2b2b2c]"
+              name="number"
+              id="number" />
+            <label class="pl-0.5 sm:pl-2" for="numbers">Numbers (0-1)</label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              class="accent-[#2b2b2c] border-[#2b2b2c]"
+              name="symbols"
+              id="symbols" />
+            <label class="pl-0.5 sm:pl-2" for="symbols">
+              Symbols (!#$&*?...)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="w-100 text-center p-3 rounded-lg mt-12 font-bold uppercase text-lg cursor-pointer convex bg-gradient-to-r from-[#29292a] to-[#303031] hover:scale-105 transition-all"
+        id="generate">
+        Generate
+      </div>
+
+      <div
+        class="mt-8 w-100 h-24 bg-black pressed2 rounded-md font-medium text-lg flex items-center justify-center p-5 bg-gradient-to-r from-[#303031] to-[#39393a]">
+        <div
+          class="m-x-8 w-[94.5%] text-center overflow-x-hidden"
+          id="password"></div>
+      </div>
+      <!-- <div class="mt-8 w-100 h-24 bg-[#2b2a2aa6]"></div> -->
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
