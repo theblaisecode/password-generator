@@ -48,6 +48,17 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // Display result in the DOM
-    password.innerText = result;
+    password.value = result;
+  });
+
+  // Copy password on click
+  password.addEventListener("click", () => {
+    password.select();
+    navigator.clipboard.writeText(password.value);
+    document.querySelector("#copy").innerText = "Copied!";
+
+    setTimeout(() => {
+      document.querySelector("#copy").innerText = "";
+    }, 2000);
   });
 });
